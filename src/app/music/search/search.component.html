@@ -1,0 +1,38 @@
+<form>
+  <input type="text" name="search" class="form-control" #myinput placeholder="Type your favourite singer ..">
+  <input type="submit" class="btn btn-default" (keydown.enter)="searchByTrack(myinput.value)"
+      value="search" (click)="searchByTrack(myinput.value)">
+</form>
+<div *ngIf="!results" class="search-result">
+    No Tracks yet    
+</div>
+<div *ngIf="loading" class="myloading">
+    <!--<img src="app/music/images/hamaki.jpg" alt="Loading">-->
+    Loading...
+</div>
+<div class="tracks-result" *ngIf="results && !loading">
+  <h3>Results</h3>
+  <div *ngIf="results.length == 0">
+    Sorry we dont recognize your search
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-4" *ngFor="let r of results">
+      <div class="track">
+          <div class="cover">
+            <img src="{{r.album.images[1].url}}" alt="{{r.artists[0].name}}">
+          </div>
+          <div class="track-info">
+              <p>
+                <a [routerLink]="['']">{{r.artists[0].name}}</a>
+              </p>
+              <p>
+                <a [routerLink]="['/music/tracks',r.id]">{{r.name}}</a>
+              </p>
+              <p class="our-album">
+                <a>{{r.album.name}}</a>
+              </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+
+<div class="our-track" *ngIf="track">
+  <div class="track-name">
+    <h3>{{track.name}}</h3>
+  </div>
+  <div class="track-image">
+    <img src="{{track.album.images[1].url}}" alt="{{track.name}}">
+  </div>
+  <div class="track-audio">
+    <audio controls src="{{track.preview_url}}"></audio> 
+  </div>
+  <p class="back-link">
+    <a [routerLink]="['/music/search']" [queryParams]="{q:track.artists[0].name}">Back</a>
+  </p>
+</div>

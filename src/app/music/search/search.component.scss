@@ -1,0 +1,45 @@
+:host{
+    
+}
+.search-result{
+    margin:10px 0;
+}
+.myloading{
+    margin-top:60px;
+    img{
+        width:80px;
+        height:80px;
+    }
+}
+form{
+    input[type="text"]{
+        display:inline-block;
+        width:50%;
+    }
+    input[type="submit"]{
+        width:10%;
+        cursor:pointer;
+        margin-left: -8px;
+        margin-top: -3px;
+        color:#fff;
+        background-color:#de6f6f;
+    }
+}
+.tracks-result{
+    padding:25px 0;
+    h3{
+        margin-bottom:20px;
+    }
+    .track{
+        width:100%;
+        box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+        margin-bottom:20px;
+       .cover{
+           img{width:100%;}
+       }
+       .track-info{
+           padding:10px;
+           background-color:#fff;
+       }
+    }
+}
